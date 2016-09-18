@@ -25,7 +25,7 @@ namespace SQSCore.SQSInterFace
         /// <param name="pwd">密码</param>
         /// <param name="ip">IP地址</param>
         /// <returns></returns>
-        bool Login(string username, string pwd, string ip);
+        int Login(string username, string pwd, string ip);
         /// <summary>
         /// 第三方帐号登录
         /// </summary>
@@ -33,6 +33,12 @@ namespace SQSCore.SQSInterFace
         /// <param name="type">1:帐号登录2:QQ登录3:微信登录4:微博登录</param>
         /// <param name="ip"></param>
         /// <returns></returns>
-        bool Login(string username, int type, string ip);
+        int Login(string username, int type, string ip);
+        /// <summary>
+        /// 发送验证码
+        /// </summary>
+        /// <param name="username">手机号</param>
+        /// <returns>验证码</returns>
+        string GetVcode(string username);
     }
 }

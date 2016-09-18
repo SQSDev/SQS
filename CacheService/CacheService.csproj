@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{58D49085-DFB1-419E-931E-B315E01F581C}</ProjectGuid>
+    <ProjectGuid>{3B4CEC9B-E4A5-4F53-BC85-2E4C8A854D51}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SQSCore</RootNamespace>
-    <AssemblyName>SQSCore</AssemblyName>
+    <RootNamespace>CacheService</RootNamespace>
+    <AssemblyName>CacheService</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,8 +30,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\CoreServer\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CoreServer\packages\ServiceStack.Common.4.0.62\lib\net40\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\..\CoreServer\packages\ServiceStack.Interfaces.4.0.62\lib\portable-wp80+sl5+net40+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Redis, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CoreServer\packages\ServiceStack.Redis.4.0.62\lib\net40\ServiceStack.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.62.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\CoreServer\packages\ServiceStack.Text.4.0.62\lib\net40\ServiceStack.Text.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -44,16 +60,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AccountService.cs" />
-    <Compile Include="CoreEnage.cs" />
+    <Compile Include="CacheConfig.cs" />
+    <Compile Include="CacheEngine.cs" />
+    <Compile Include="CacheHandler\AccountHandler.cs" />
+    <Compile Include="CacheHandler\VcodeHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQSInterFace\AccountInterface.cs" />
+    <Compile Include="RedisTableConfig.cs" />
+    <Compile Include="Redis\HashOperator.cs" />
+    <Compile Include="Redis\RedisOperatorBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CacheService\CacheService.csproj">
-      <Project>{3b4cec9b-e4a5-4f53-bc85-2e4c8a854d51}</Project>
-      <Name>CacheService</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ComLib\ComLib.csproj">
       <Project>{6f130889-e4d4-420a-8b5f-b5eb29bd2de0}</Project>
       <Name>ComLib</Name>
@@ -62,9 +81,6 @@
       <Project>{28e6ae1a-ee12-4168-9541-7c5851ecd04f}</Project>
       <Name>DataService</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

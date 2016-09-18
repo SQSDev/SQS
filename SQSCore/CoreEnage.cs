@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using log4net.Config;
 using DataService;
+using CacheService;
 
 namespace SQSCore
 {
@@ -32,6 +33,8 @@ namespace SQSCore
                 dbe = new DataBaseEngine();
             }
             dbe.Start();
+            //启动Redis缓存
+            CacheEngine.Instance().Start();
         }
     }
 }

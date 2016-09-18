@@ -17,7 +17,7 @@ namespace DataService.Model
         public string RegTime { get; set; }//帐号注册时间
         public string BankName { get; set; }//开户银行名称
         public string BankCard { get; set; }//银行卡号
-        public string BankRealName { get; set; }//开户姓名
+        public string RealName { get; set; }//开户姓名
         public string IdCard { get; set; }//身份证号
         public string CashPwd { get; set; }//提现密码
         public decimal TotalMoney { get; set; }//总余额

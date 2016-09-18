@@ -1,6 +1,7 @@
 SQSCore---后端主入口
 DataService---数据库服务以及model
 ComLib---常用类库
+CacheService---Redis缓存系统
 log4net.config---日志模块配置文件
 
 启动后端框架:
@@ -12,12 +13,19 @@ CoreEnage.Instance().Start();
 DataService.Model  帐号数据模型类AccountBase
 
 using SQSCore.Account
+类名AccountService
+        /// <summary>
+        /// 发送验证码
+        /// </summary>
+        /// <param name="username">手机号</param>
+        /// <returns>验证码</returns>
+        string GetVcode(string username);
         /// <summary>
         /// 注册
         /// </summary>
         /// <param name="username">用户名</param>
         /// <param name="pwd">密码</param>
-        /// <returns></returns>
+        /// <returns>是否注册成功</returns>
         bool Register(string username, string pwd);
         /// <summary>
         /// 平台帐号登录
@@ -25,13 +33,13 @@ using SQSCore.Account
         /// <param name="username">用户名</param>
         /// <param name="pwd">密码</param>
         /// <param name="ip">IP地址</param>
-        /// <returns></returns>
-        bool Login(string username, string pwd, string ip);
+        /// <returns>结果代号(详见DataService.Model.ResultCode)</returns>
+        int Login(string username, string pwd, string ip);
         /// <summary>
         /// 第三方帐号登录
         /// </summary>
         /// <param name="username">用户名</param>
         /// <param name="type">1:帐号登录2:QQ登录3:微信登录4:微博登录</param>
         /// <param name="ip"></param>
-        /// <returns></returns>
-        bool Login(string username, int type, string ip);
+        /// <returns>结果代号(详见DataService.Model.ResultCode)</returns>
+        int Login(string username, int type, string ip);
