@@ -10,7 +10,7 @@ EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{8604B0FF-BF55-485D-8ADB-1752AA1BDA00}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
-		ProjectReferences = "{58d49085-dfb1-419e-931e-b315e01f581c}|SQSCore.dll;{6F130889-E4D4-420A-8B5F-B5EB29BD2DE0}|ComLib.dll;"
+		ProjectReferences = "{58d49085-dfb1-419e-931e-b315e01f581c}|SQSCore.dll;{6F130889-E4D4-420A-8B5F-B5EB29BD2DE0}|ComLib.dll;{28E6AE1A-EE12-4168-9541-7C5851ECD04F}|DataService.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_48257"
 		Debug.AspNetCompiler.PhysicalPath = "Web\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_48257\"
@@ -30,6 +30,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{8604B0FF-BF
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataService", "DataService\DataService\DataService.csproj", "{28E6AE1A-EE12-4168-9541-7C5851ECD04F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{8604B0FF-BF55-485D-8ADB-1752AA1BDA00}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8604B0FF-BF55-485D-8ADB-1752AA1BDA00}.Release|Any CPU.ActiveCfg = Debug|Any CPU
 		{8604B0FF-BF55-485D-8ADB-1752AA1BDA00}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{28E6AE1A-EE12-4168-9541-7C5851ECD04F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E6AE1A-EE12-4168-9541-7C5851ECD04F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E6AE1A-EE12-4168-9541-7C5851ECD04F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E6AE1A-EE12-4168-9541-7C5851ECD04F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

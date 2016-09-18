@@ -52,6 +52,10 @@
       <Project>{6f130889-e4d4-420a-8b5f-b5eb29bd2de0}</Project>
       <Name>ComLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataService\DataService\DataService.csproj">
+      <Project>{28e6ae1a-ee12-4168-9541-7c5851ecd04f}</Project>
+      <Name>DataService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

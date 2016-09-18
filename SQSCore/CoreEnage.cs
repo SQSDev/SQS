@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net.Config;
+using DataService;
 
 namespace SQSCore
 {
     public class CoreEnage
     {
+        DataBaseEngine dbe;
         private static CoreEnage _instance = null;
         public static CoreEnage Instance()
         {
@@ -24,6 +26,12 @@ namespace SQSCore
         {
             //启动日志记录模块
             XmlConfigurator.Configure();
+            //启动数据库线程
+            if(dbe == null)
+            {
+                dbe = new DataBaseEngine();
+            }
+            dbe.Start();
         }
     }
 }
