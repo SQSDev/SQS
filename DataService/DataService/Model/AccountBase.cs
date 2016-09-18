@@ -5,6 +5,7 @@ namespace DataService.Model
     public class AccountBase
     {
         public long Id { get; set; }//帐号Id
+        public int AccountType { get; set; }//帐号类型----- 0:普通帐号1:普通管理员帐号2:超级管理员帐号
         public string Mobile { get; set; }//主帐号（手机号）
         public string Nickname { get; set; }//帐号名称
         public string Password { get; set; }//密码
@@ -22,6 +23,9 @@ namespace DataService.Model
         public decimal TotalMoney { get; set; }//总余额
         public decimal CashMoney { get; set; }//可提现余额
         public decimal FrostMoney { get; set; }//冻结余额
+        public string LastLoginIP { get; set; }//上次登录IP
+        public string LastLoginTime { get; set; }//上次登录时间
+        public int LastLoginType { get; set; }//上次登录方式
 
     }
 }
