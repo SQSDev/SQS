@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using SQSCore.SQSInterFace;
 using DataService.Model;
+using DataService;
 using ComLib.DEncrypt;
 using ComLib.Utils;
 using CacheService.CacheHandler;
+using Newtonsoft.Json;
+
 
 namespace SQSCore.Account
 {
@@ -23,6 +25,7 @@ namespace SQSCore.Account
         public bool Register(string username,string pwd)
         {
             AccountBase model = new AccountBase();
+            model.Id = TimeUtils.GetUtcStamp();
             model.AccountType = 0;
             model.FrostMoney = 0;
             model.CashMoney = 0;
@@ -30,9 +33,13 @@ namespace SQSCore.Account
             model.Password = Encrypt.GetMD5_32(pwd);
             model.LastLoginType = 1;
             model.RegTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            model.LastLoginTime = model.RegTime;
             int rs = AccountHandler.Instance().AddAccount(model);
             if(rs == 1)
             {
+                LogUtils.WriteInfoLog(typeof(AccountService), JsonConvert.SerializeObject(model));
+                string sql = string.Format(DataConfig.Account_Reg,model.Id,model.Mobile,model.Password,model.RegTime,0,0,model.LastLoginIP,model.LastLoginType,model.LastLoginTime,model.AccountType);
+                CoreEnage.Instance().DataBase.PushDbQuery(sql);
                 return true;
             }
             else

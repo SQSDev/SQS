@@ -14,8 +14,7 @@ namespace CacheService.CacheHandler
     {
         private static VcodeHandler _instance = null;
         private Dictionary<string, string> dicVcode;
-        private Dictionary<long, string> dicWorkerToken;
-        private Dictionary<long, string> dicUserToken;
+
         public static VcodeHandler Instance()
         {
             if (_instance == null)
@@ -29,8 +28,7 @@ namespace CacheService.CacheHandler
         public VcodeHandler()
         {
             dicVcode = new Dictionary<string, string>();
-            dicWorkerToken = new Dictionary<long, string>();
-            dicUserToken = new Dictionary<long, string>();
+
         }
 
         public void Put(string mobile,string vcode)

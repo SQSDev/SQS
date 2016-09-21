@@ -36,5 +36,19 @@ namespace SQSCore
             //启动Redis缓存
             CacheEngine.Instance().Start();
         }
+
+        public DataBaseEngine DataBase
+        {
+            get
+            {
+                if (dbe == null)
+                {
+                    dbe = new DataBaseEngine();
+                    dbe.Start();
+                }
+                return dbe;
+            }
+
+        }
     }
 }

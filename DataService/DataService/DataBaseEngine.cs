@@ -19,11 +19,12 @@ namespace DataService
         private List<DbQuery> listQuery;//sql队列
         private Thread dbThread;//数据库执行线程
         private bool isRunning = false;//是否运行状态
+        private MysqlHelper mysql;
 
         private AccountDataHandler Account;//帐号数据存取
         public DataBaseEngine()
         {
-            SqlserverUtils.ConStr = DataConfig.Sql_Host;
+            mysql = new MysqlHelper(DataConfig.Sql_Host);
             listQuery = new List<DbQuery>();
             Account = new AccountDataHandler();
           
@@ -60,11 +61,11 @@ namespace DataService
                          db = listQuery.First();
                         if(db != null && db.state == 0)
                         {
-                            db.rs = SqlserverUtils.ExecuteNonQuery(SqlserverUtils.ConStr, CommandType.Text, db.SqlStr);
+                            db.rs = mysql.ExecuteNonQuery(CommandType.Text, db.SqlStr);
                             db.state = 1;
                         }
                         listQuery.Remove(db);
- 
+                        Console.WriteLine("队列中有 " + listQuery.Count + "条SQL");
                     }
                     catch(Exception ex)
                     {
@@ -128,18 +129,7 @@ namespace DataService
         /// <returns></returns>
         public List<AccountBase> GetUser()
         {
-            return Account.LoadUserData();
-        }
-
-
-        /// <summary>
-        /// 导入新增用户
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public int PutAddUser(List<AccountBase> list)
-        {
-            return Account.PutUserData(list);
+            return Account.LoadAccountData();
         }
 
         /// <summary>
@@ -149,7 +139,7 @@ namespace DataService
         /// <returns></returns>
         public int PutUpdateUser(AccountBase su)
         {
-            return Account.UpdateUserData(su);
+            return Account.UpdateAccountData(su);
         }
 
     }

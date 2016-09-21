@@ -10,9 +10,9 @@ namespace DataService.DataHandler
 {
     public class AccountDataHandler
     {
-       public List<AccountBase> LoadUserData()
+       public List<AccountBase> LoadAccountData()
         {
-            string sql = "select * from jxb_user;";
+            string sql = "select * from SQS_Account;";
             DataSet ds = SqlserverUtils.ExecuteDataset(SqlserverUtils.ConStr, CommandType.Text, sql);
             IList<AccountBase> wu = ConvertUtils.DataSetToEntityList<AccountBase>(ds, 0);
             List<AccountBase> lu = new List<AccountBase>();
@@ -20,20 +20,8 @@ namespace DataService.DataHandler
             return lu;
         }
 
-        public int PutUserData(List<AccountBase> list)
-        {
-            int rs = 0;
-            if (list==null || list.Count == 0)
-            {
-                return rs;
-            }
-        
-            DataTable dt = ConvertUtils.ToDataSet(list, DataConfig.Table_User);
-            rs = SqlserverUtils.BatchInert(DataConfig.Sql_Host, "SQS_Account", dt);
-            return rs;
-        }
 
-        public int UpdateUserData(AccountBase su)
+        public int UpdateAccountData(AccountBase su)
         {
             int rs = 0;
             if(su == null)
