@@ -1,0 +1,154 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="js/jquery-1.11.2.min.js"></script>
+    <script>
+        if (typeof jQuery == 'undefined') {
+            window.alert('没有jQuery');
+        } else { }
+    </script>
+    <script>
+       <%-- $(function () {
+            $('body').css({ "width": "100%", "margin": "0 auto", "background": "none", "padding": "0px", "text-align": "center" });
+            $('a').css({ "text-decoration": "none" });
+            $('li').css({ "list-style": "none" });
+            $('.head').css({ "width": "100%", "position": "relative", "margin": "0 auto", "padding": "0px", "margin-top": "10px" });
+            $('.menubot').css({ "width": "100%", "background": "none", "height": "96px" });
+            $('.menu').css({ "width": "1000px", "margin": "0 auto" });
+            $('ul.topnav').css({ "list-style": "none" });
+            $('ul.topnav li').css({ "text-decoration": "none", "float": "left", "color": "#000", "cursor": "pointer", "z-index": "999" });
+            $('ul.topnav li').css({ "text-decoration": "none", "float": "left", "color": "#000", "cursor": "pointer", "*position": "relative", "z-index": "999", "width": "15%", "text-align": "center" });
+            $('ul.topnav li span').css({ "height": "50px", "line-height": "50px", "color": "#fff", "font-weight": "bold", "text-transform": "uppercase" });
+            $('ul.topnav li:hover ul.subnav').css({ "display": "block" });
+            $('ul.topnav li ul.subnav').css({ "list-style": "none", "position": "absolute", "top": "70px", "*top": "44px", "*left": "0px", "background": "#fff", "margin": "0", "padding": "0", "width": "600px", "color": "#000", "z-index": "999", "display": "none", "border-top": "5px solid #80a9ec" });
+            $('ul.topnav li ul.subnav li').css({ "margin": "0", "padding": "0px", "height": "40px", "line-height":"40px","text-align":"left","cursor":"pointer","text-transform":"uppercase","float":"left","width":"100px" });
+            $('ul.subnav').css({"list-style":"none","margin":"0px","padding":"0px","width":"auto"});
+            $('ul.subnav li a').css({"padding":"Opx 15px 0px 15px","height":"40px","line-height":"40px","text-align":"left","width":"70px","display":"block"});
+            $('ul.subnav li a:hover').css({"height":"40px","line-height":"40px","text-align":"left","display":"block","float":"left","background-color":"#fff","color":"#a09e73"});
+            <%--以下为public.css内容 --%>
+            //$('tr,td,img').css({ "border-width": "0", "margin": "0", "padding": "0" });
+            //$('table').css({ "border-collapse": "collapse" });
+            <%-- 关于footer部分 --%>
+            //$('.footer').css({ "width": "100%", "margin": "0 auto", "overflow": "hidden", "background-color": "#313131" });--%>
+
+        //})
+    </script>
+</head>
+<body>
+ <form id ="form1" runat="server">
+
+      
+    <div>
+  <div class="head">
+  <div class="menubot">
+    <table class="menu">
+        <tr>
+      <td class="menuleft" style="width:238px;"><img src="images/logo.png"/></td>
+       <td class="menucenter">
+         <ul class="topnav" id="clickmenubot">
+            <li><span><a class="toplink2" title="首页" href="#">首页</a></span></li>
+            <li><span><a class="toplink" title="社群动态" href="#">社群动态</a></span>
+               <ul class="subnav">
+                  <li><a class="novlink" href="#" title="社群动态">社群动态</a></li>
+                  <li><a class="novlink" href="#" title="推荐活动">推荐活动</a></li>
+                  <li><a class="novlink" href="#" title="精选社群">精选社群</a></li>
+                  <li><a class="novlink" href="#" title="热文专栏">热文专栏</a></li>
+                  <li><a class="novlink" href="#" title="内容共享">内容共享</a></li>
+                  <li><a class="novlink" href="#" title="资源匹配">资源匹配</a></li>
+               </ul>
+            </li>
+            <li><span><a class="toplink" title="社群数据" href="#">社群数据</a></span>
+               <ul class="subnav">
+                  <li><a class="novlink" href="#" title="群榜">群榜</a></li>
+                  <li><a class="novlink" href="#" title="图解社群">图解社群</a></li>
+                  <li><a class="novlink" href="#" title="社群地图">社群地图</a></li>
+               </ul>
+            </li>
+            <li><span><a class="toplink" title="社群管理" href="#">社群管理</a></span></li>
+            <li><span><a class="toplink" title="社群研究" href="#">社群研究</a></span>
+               <ul class="subnav">
+                  <li><a class="novlink" href="#" title="专题报告">专题报告</a></li>
+                  <li><a class="novlink" href="#" title="定制方案">定制方案</a></li>
+                  <li><a class="novlink" href="#" title="精华案例">精华案例</a></li>
+               </ul>
+            </li>
+            <li><span><a class="toplink" title="社群大学" href="#">社群大学</a></span></li>
+         </ul>
+       </td>
+       <td class="menuright"></td>
+    </tr>
+        </table>
+      </div>
+      </div>
+
+
+
+
+
+     <div>
+                      
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+      
+     </div>
+         
+  <div>
+    
+ <div class="footer">
+   <div class="framecenter footer">
+     <div class="footerdown"></div>
+     <div class="parttype">
+           <div class="fl">
+                <ul>
+                    <li>
+                        <dl>
+                            <dt>公司</dt>
+                            <dd style=" text-align:left;"><a href="#">关于我们</a></dd>
+                            <dd><a href="#">加入我们</a></dd>
+                            <dd><a href="#">合作伙伴</a></dd>
+                            <dd><a href="#">产品服务</a></dd>
+                        </dl>
+                    </li>
+                    <li class="contact">
+                        <dl>
+                            <dt>联系我们</dt>
+                            <dd class="dd01">商务合作：info@zhugeio.com</dd>
+                            <dd class="dd02">客户支持：40080-94843</dd>
+                            <dd class="dd03">官方QQ群：4008094843</dd>
+                            <dd class="dd04">公司地址：北京市朝阳区工体北路4号院80 office 4层410室</dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+            <div class="fr">
+              <h2 style="text-align:left;">微信公众号</h2>
+              <li>  
+                <div class="img"><img src="images/erweima.jpg" alt="社群生态" /></div>
+                <h4>社群生态</h4>
+              </li>
+              <li>
+                <div class="img"><img src="images/erweima.jpg" alt="社群科学研究院" /></div>
+                <h4>社群科学研究院</h4>
+              </li>
+            </div>
+     </div>
+   </div>
+ </div>  
+              </div>
+            </div>
+ 
+        </form>
+
+
+
+    
+   
+</body>
+</html>

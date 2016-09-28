@@ -1,15 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ComLib.Utils;
-
-public partial class _Default : Page
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        LogUtils.WriteInfoLog(typeof(_Default),"打开了首页");   
+
     }
+
+    public SqlConnection GetConnection()
+    {
+        string myStr = ConfigurationManager.AppSettings["ConnectionString"].ToString();
+        SqlConnection myConn = new SqlConnection(myStr);
+        return myConn;
+
+    }
+  
+
+
+
 }

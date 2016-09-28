@@ -1,0 +1,64 @@
+﻿body{ width:100%; margin:0 auto; background:none; padding:0px; text-align: center;}
+a{ text-decoration:none;}
+li{ list-style:none;}
+.head{ width:100%;position: relative; margin:0 auto; padding:0px; margin-top:10px;}
+
+.menubot{ width:100%; background:none; height:96px;}
+.menu{ width:1000px; margin:0 auto;}
+
+ul.topnav{list-style:none; margin:0 auto; padding:0px; height:50px; line-height:50px; overflow:hidden;}
+ul.topnav li{text-decoration:none; float:left; color:#000; cursor: pointer; z-index:999;}
+ul.topnav li{text-decoration: none;float:left;color: #000;cursor: pointer;*position: relative;z-index: 999; width:15%; text-align:center;}
+ul.topnav li span{ height:50px; line-height:50px; color:#fff; font-weight:bold; text-transform: uppercase;}
+ul.topnav li:hover ul.subnav{ display:block;}
+ul.topnav li ul.subnav {list-style: none;position: absolute; top:70px;*top:44px;*left: 0px;background: #fff;margin: 0;padding: 0;width: 600px;color: #000;z-index: 999;display: none; border-top:5px solid #80a9ec;}
+ul.topnav li ul.subnav li{margin: 0;/*clear: both;*/padding:0px;height: 40px;line-height: 40px;text-align: left;cursor: pointer;text-transform: uppercase; float:left; width:100px;}
+ul.subnav{ list-style:none; margin:0px; padding:0px; width:auto;}
+ul.subnav li a{padding:0px 15px 0px 15px;height:40px;line-height: 40px;text-align: left;width: 70px;display: block;}
+ul.subnav li a:hover{height:40px;line-height: 40px;text-align: left;display: block;float: left;background-color: #fff; color:#a09e73}
+<!-- 以上为navigator列表 -->
+
+
+.banner{ width:100%; height:580px;}
+
+.footer{ width:100%; margin:0 auto; overflow:hidden; background-color:#313131;}
+.framecenter{ width:1000px; margin:0 auto;}
+.parttype{ width:1000px; text-align:center; height:220px; padding-bottom:40px; padding-top:30px;}
+.fl{ margin-left:60px; float:left;}
+.fl ul li{ float:left; width:150px;}
+.fl ul li dl dt{ font-size:16px; color:#fff; line-height:55px; text-align:left; color:#8c8c8c;}
+.fl ul li.contact{ width:370px;}
+.fl ul li dl dd{ line-height:22px; padding:7px 0; font-size:14px; color:#8c8c8c; text-align:left;}
+.fl ul li dl dd a{ line-height:22px; padding:7px 0; font-size:14px; color:#8c8c8c; text-align:left;}
+.fr{ margin-right:60px; float:right;}
+.fr li { float:left; list-style:none; padding-right:45px;}
+.fr h2{ font-size:16px; color:#fff; line-height:55px; color:#8c8c8c;}
+.fr .img img{ width:120px; height:120px;}
+.fr h4{ font-size:14px; color:#fff; line-height:50px; color:#8c8c8c;}
+
+.rewen{ width:1000px; margin:0 auto; margin-top:50px;}
+.left{ float:left; width:760px;}
+.right{ float:right; width:230px; border:1px solid #e8e8e8;}
+.rewen li{ width:760px; height:200px; border:1px solid #e8e8e8; list-style:none; margin-bottom:10px;}
+.rewen li div{ width:410px; height:200px; float:right; padding-right:50px;}
+.hot{ width:190px; padding:20px; font-size:16px; float:left; text-align:left; border-bottom:1px solid #e8e8e8;}
+.hot_list li{width:210px; height:35px; line-height:35px; text-align:left; float:left; padding-left:20px; border:none;}
+
+.article_index{ width:1000px; margin:0 auto; padding:0px; margin-top:50px; border-bottom:3px solid #0CF;}
+.article_index .text{ width:900px; margin:0 auto; margin-bottom:10px;}
+.article_index .text p{ text-align:left; font-size:25px; font-weight:bold;}
+.article_index .text .user{ overflow:hidden; padding-top:12px;}
+.article_index .text .user .img{ float:left; height:auto;}
+.article_index .text .user .text{ float:left; color:8c8c8c; margin-left:10px; padding:0; width:5%; white-space:nowrap; text-overflow: ellipsis; height:30px; line-height:30px;}
+.article_index .text .user a.text_right{ float:right; color:8c8c8c; margin-left:10px; padding:0; white-space:nowrap; text-overflow: ellipsis; height:30px; line-height:30px;}
+.article_index .text .user a.text_center{ text-align:center; color:8c8c8c; padding:0;  height:30px; line-height:30px;}
+
+.index_text{ margin-top:50px;}
+
+.index-nav{ background:#999; width:100%; height:50px;}
+.select{ background:#999; width:1000px; margin:0 auto; height:50px;}
+.case_list{ margin:84px 0 10px 0;}
+.layout{ width:1000px; margin:0 auto; text-align:left;}
+.case_list ul{ overflow:hidden; padding-bottom:10px;}
+.case_list ul li{ width:310px; background:#fff; border-radius:5px; box-shadow:0px 5px 18px 0px rgba(128,150,212,0.2); float:left; margin:10px;}
+
